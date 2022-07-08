@@ -5,37 +5,48 @@ import javax.persistence.*;
 @Entity
 @Table(name = "recipes")
 public class Recipes {
+
     @Id
-    @Column(name = "idRecipes", nullable = false)
-    private Long idRecipes;
-    private String recipe;
-    private List<Ingredients> ingredients;
+    @Column(name = "idRecipe", nullable = false)
+    private Long idRecipe;
+    private String name;
+    private String description;
+    private boolean isVegetarian;
     private String instructions;
+    private int servings;
 
     public Recipes() {}
 
-    public Long getIdRecipes() {
-        return idRecipes;
+    public Long getIdRecipe() {
+        return idRecipe;
     }
 
-    public void setIdRecipes(Long idUsers) {
-        this.idRecipes = idUsers;
+    public void setIdRecipe(Long idRecipe) {
+        this.idRecipe = idRecipe;
     }
 
-    public String getRecipe() {
-        return recipe;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipe(String nameUsers) {
-        this.recipe = nameUsers;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public String getDescription() {
+        return description;
     }
 
-    public void setIngredients(String favRecipes) {
-        this.ingredients = favRecipes;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isVegetarian() {
+        return isVegetarian;
+    }
+
+    public void setVegetarian(boolean vegetarian) {
+        isVegetarian = vegetarian;
     }
 
     public String getInstructions() {
@@ -44,5 +55,13 @@ public class Recipes {
 
     public void setInstructions(String instructions) {
         this.instructions = instructions;
+    }
+
+    public int getServings() {
+        return servings;
+    }
+
+    public void setServings(int servings) {
+        this.servings = servings;
     }
 }

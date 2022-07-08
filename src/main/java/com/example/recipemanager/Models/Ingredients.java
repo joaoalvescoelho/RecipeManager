@@ -5,10 +5,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ingredients")
 public class Ingredients {
+
     @Id
     @Column(name = "idIngredients", nullable = false)
     private Long idIngredients;
-    private String ingredients;
+    private String name;
 
     public Ingredients() {}
 
@@ -20,11 +21,11 @@ public class Ingredients {
         this.idIngredients = idIngredients;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public String getName() {
+        return name;
     }
 
-    public void setIngredients(String nameUsers) {
-        this.ingredients = nameUsers;
+    public void setName(String nameUsers) {
+        this.name = nameUsers;
     }
 }

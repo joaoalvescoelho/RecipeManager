@@ -10,7 +10,6 @@ public class Users {
     private Long idUsers;
     private String nameUsers;
     private Long favRecipes;
-    private boolean isVegetarian;
 
     public Users() {}
 
@@ -38,11 +37,4 @@ public class Users {
         this.favRecipes = favRecipes;
     }
 
-    public boolean isVegetarian() {
-        return isVegetarian;
-    }
-
-    public void setVegetarian(boolean vegetarian) {
-        isVegetarian = vegetarian;
-    }
 }
