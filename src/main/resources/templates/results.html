@@ -6,15 +6,16 @@
     <link href="style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
-<body>
-<h1>Favorite Recipes</h1>
+<h1>Recipe search results:</h1>
 <div id="favorites">
     <div>
         <table>
+            <thead>
+            </thead>
             <body>
-            <th:block th:each="favorite : ${favRecipes.favs}">
+            <th:block th:each="recipe : ${recipe.recipes}">
                 <tr>
-                    <td th:text="${favorite.name}">
+                    <td th:text="${recipe.name}"></td>
                 </tr>
             </th:block>
             </body>
@@ -24,5 +25,4 @@
 <form method="get" th:action="@{/home}" >
     <input type="submit" value="Home page">
 </form>
-</body>
 </html>

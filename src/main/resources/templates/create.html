@@ -2,12 +2,36 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Create new recipe</title>
+    <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-<h1>Create new recipe</h1>
-<form>
-    <input type="button" value="Go back" onclick="history.back()">
+<h1>Create New Recipe</h1>
+<form method="post" action="createRecipes">
+    <p>*Name: <label>
+        <input type="text" name="name" onkeydown="return /[a-z]/i.test(event.key)" required>
+    </label></p>
+    <p>Description: <label>
+        <input type="text" name="description">
+    </label></p>
+    <p>*Vegetarian (y/n): <label>
+        <input type="text" name="veg" pattern="[nyNY]" required>
+    </label></p>
+    <p>*Ingredients: <label>
+        <input title="For multiple ingredients please use a comma. Example: tuna, rice" type="text" name="ingredients" required >
+    </label> </p>
+    <p>Instructions: <label>
+        <input type="text" name="instructions">
+    </label></p>
+    <p>*Servings: <label>
+        <input type="number" name="servings" pattern="[0-9]" required>
+    </label></p>
+    <input type="submit" value="Create">
 </form>
+<form method="get" th:action="@{/home}" >
+    <input type="submit" value="Home page">
+</form>
+
 </body>
 </html>

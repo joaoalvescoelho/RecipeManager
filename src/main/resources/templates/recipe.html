@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<h1>Recipe</h1>
+<form>
+    <p>Name: <label>
+        <input type="text" name="name" th:value="${recipe.name}" disabled>
+    </label></p>
+    <p>Description: <label>
+        <input type="text" name="description" th:value="${recipe.description}" disabled>
+    </label></p>
+    <p>Vegetarian: <label>
+        <input type="text" name="is_vegetarian" th:value="${recipe.is_vegetarian}" disabled>
+    </label></p>
+    <p>Ingredients: <label>
+        <input type="text" name="ingredients" th:value="${recipe.ingredients}" disabled>
+    </label> </p>
+    <p>Instructions: <label>
+        <input type="text" name="instructions" th:value="${recipe.instructions}" disabled>
+    </label></p>
+    <p>Servings: <label>
+        <input type="number" name="servings" th:value="${recipe.servings}" disabled>
+    </label></p>
+</form>
+<form method="get" th:action="@{/home}" >
+    <input type="submit" value="Home page">
+</form>
+</body>
+</html>

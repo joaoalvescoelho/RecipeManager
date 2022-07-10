@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<h1>Manage Recipes</h1>
+<div id="manage">
+    <div>
+        <table>
+            <body>
+            <th:block th:each="recipe : ${allRecipes}">
+                <tr>
+                    <td>
+                        <p th:text="${recipe.name}"></p>
+                        <form method="post" th:action="@{/updateRecipe/{idRecipe}(idRecipe=${recipe.idRecipe})}" >
+                            <input type="submit" value="Update">
+                        </form>
+                        <form method="post" th:action="@{/deleteRecipe/{idRecipe}(idRecipe=${recipe.idRecipe})}" >
+                            <input type="submit" value="Delete">
+                        </form>
+                        <form method="get" th:action="@{/makeFavorite/{idRecipe}(idRecipe=${recipe.idRecipe})}" >
+                            <input type="submit" value="Favorite">
+                        </form>
+                    </td>
+                </tr>
+            </th:block>
+            </body>
+        </table>
+    </div>
+</div>
+<form method="get" th:action="@{/home}" >
+    <input type="submit" value="Home page">
+</form>
+</body>
+</html>

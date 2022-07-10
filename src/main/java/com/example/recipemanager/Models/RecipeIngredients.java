@@ -1,34 +1,32 @@
 package com.example.recipemanager.Models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "recipesingredients")
+@Table(name = "recipesingredients", schema = "recipe_manager")
 public class RecipeIngredients {
 
     @Id
-    @Column(name = "idIngredients", nullable = false)
-    private Long idIngredients;
-    private Long idRecipe;
+    private Long id_ingredients;
+    private Long id_recipes;
 
     public RecipeIngredients() {}
 
     public Long getIdIngredients() {
-        return idIngredients;
+        return id_ingredients;
     }
 
-    public void setIdIngredients(Long idIngredients) {
-        this.idIngredients = idIngredients;
+    public void setIdIngredients(Long id_ingredients) {
+        this.id_ingredients = id_ingredients;
     }
 
     public Long getIdRecipe() {
-        return idRecipe;
+        return id_recipes;
     }
 
     public void setIdRecipe(Long idRecipe) {
-        this.idRecipe = idRecipe;
+        this.id_recipes = id_recipes;
     }
 }

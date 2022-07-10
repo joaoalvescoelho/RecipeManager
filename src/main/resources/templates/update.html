@@ -2,12 +2,37 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update Recipe</title>
+    <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-<h1>Update Recipe</h1>
-<form>
-    <input type="button" value="Go back" onclick="history.back()">
-</form>
+<h1>Recipe</h1>
+<div>
+    <form method="post" th:action="@{/updateRecipes/{id}(id=${recipe.id})}" >
+        <p>Name: <label>
+            <input type="text" name="newName" th:value="${recipe.name}" >
+        </label></p>
+        <p>Description: <label>
+            <input type="text" name="description" th:value="${recipe.description}" >
+        </label></p>
+        <p>Vegetarian: <label>
+            <input type="text" name="is_vegetarian" th:value="${recipe.is_vegetarian}" >
+        </label></p>
+        <p>Ingredients: <label>
+            <input type="text" name="ingredients" th:value="${recipe.ingredients}">
+        </label> </p>
+        <p>Instructions: <label>
+            <input type="text" name="instructions" th:value="${recipe.instructions}" >
+        </label></p>
+        <p>Servings: <label>
+            <input type="number" name="servings" th:value="${recipe.servings}" >
+        </label></p>
+        <input type="submit" value="Update">
+    </form>
+    <form method="get" th:action="@{/home}" >
+        <input type="submit" value="Home page">
+    </form>
+</div>
 </body>
 </html>

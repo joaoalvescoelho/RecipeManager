@@ -1,28 +1,31 @@
 package com.example.recipemanager.Models;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name = "recipes")
+@Table(name = "recipes", schema = "recipe_manager")
 public class Recipes {
 
     @Id
-    @Column(name = "idRecipe", nullable = false)
-    private Long idRecipe;
+    @Column(name = "id_recipe", nullable = false)
+    private Long id_recipe;
     private String name;
     private String description;
-    private boolean isVegetarian;
+    private String is_vegetarian;
     private String instructions;
-    private int servings;
+    private String servings;
 
     public Recipes() {}
 
     public Long getIdRecipe() {
-        return idRecipe;
+        return id_recipe;
     }
 
-    public void setIdRecipe(Long idRecipe) {
-        this.idRecipe = idRecipe;
+    public void setIdRecipe(Long id_recipe) {
+        this.id_recipe = id_recipe;
     }
 
     public String getName() {
@@ -41,12 +44,12 @@ public class Recipes {
         this.description = description;
     }
 
-    public boolean isVegetarian() {
-        return isVegetarian;
+    public String isVegetarian() {
+        return is_vegetarian;
     }
 
-    public void setVegetarian(boolean vegetarian) {
-        isVegetarian = vegetarian;
+    public void setVegetarian(String vegetarian) {
+        is_vegetarian = vegetarian;
     }
 
     public String getInstructions() {
@@ -57,11 +60,11 @@ public class Recipes {
         this.instructions = instructions;
     }
 
-    public int getServings() {
+    public String getServings() {
         return servings;
     }
 
-    public void setServings(int servings) {
+    public void setServings(String servings) {
         this.servings = servings;
     }
 }

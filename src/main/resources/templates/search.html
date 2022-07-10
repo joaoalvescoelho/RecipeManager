@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<h1>Search recipes</h1>
+<form method="post" action="searchResults">
+    <p>Vegetarian (y/n): <label>
+        <input type="text" name="veg">
+    </label></p>
+    <p>Ingredients: <label>
+        <input type="text" name="ingredients">
+    </label> </p>
+    <p>Ingredients to exclude: <label>
+        <input type="text" name="excludeIngredients">
+    </label> </p>
+    <p>Instructions: <label>
+        <input type="text" name="instructions">
+    </label></p>
+    <p>Servings: <label>
+        <input type="number" name="servings">
+    </label></p>
+    <input type="submit" value="Submit">
+</form>
+<form method="get" th:action="@{/home}" >
+    <input type="submit" value="Home page">
+</form>
+</body>
+</html>

@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Recipe Manager</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-
+<div class="tab">
+    <button id="createButton">Create</button>
+    <script type="text/javascript">
+        document.getElementById("createButton").onclick = function () {
+            location.href = "create";
+        };
+    </script>
+    <button id="searchButton">Search Recipes</button>
+    <script type="text/javascript">
+        document.getElementById("searchButton").onclick = function () {
+            location.href = "searchRecipes";
+        };
+    </script>
+    <button id="favButton">Favorite Recipes</button>
+    <script type="text/javascript">
+        document.getElementById("favButton").onclick = function () {
+            location.href = "favoriteRecipes";
+        };
+    </script>
+    <button id="manageButton">Manage Recipes</button>
+    <script type="text/javascript">
+        document.getElementById("manageButton").onclick = function () {
+            location.href = "manageRecipes";
+        };
+    </script>
+</div>
 </body>
 </html>
+
