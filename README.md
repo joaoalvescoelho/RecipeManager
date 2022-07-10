@@ -38,4 +38,4 @@ This application is build to meet the  cases mentioned in points 1 to 4.
 
 ## How to run
 You can run the application by launching the springboot.
-After, the application should be available http://localhost:8080/ wew is possible to test the functionalities
+After, the application should be available http://localhost:8080/ were is possible to test the functionalities
